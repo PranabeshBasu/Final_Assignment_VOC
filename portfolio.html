@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PranabeshBasu_Portfolio</title>
+  <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+<!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body style="background-color:#eef2f3; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; padding:0;">
+
+  <!-- Header Section -->
+  <header style="background-color:#2c3e50; color:white; padding:30px 0; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+    <h1 style="text-align:center; margin:0; font-size:36px;">Pranabesh Basu</h1>
+    <p style="text-align:center; font-size:18px; margin:8px;">Aspiring Web Developer | Tech Enthusiast | A.I Enthusiast</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav style="background-color:#34495e; padding:15px 0;">
+    <p style="text-align:center; font-size:16px; margin:0;">
+      <a href="#about" style="color:white; margin:0 20px; text-decoration:underline;">About Me</a>
+      <a href="#skills" style="color:white; margin:0 20px; text-decoration:underline;">Skills</a>
+      <a href="#projects" style="color:white; margin:0 20px; text-decoration:underline;">Projects</a>
+      <a href="#contact" style="color:white; margin:0 20px; text-decoration:underline;">Contact</a>
+    </p>
+  </nav>
+
+  <!-- About Me Section -->
+  <section id="about" style="padding:30px; background-color:white; margin:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+    <h2 style="color:#2980b9;">About Me</h2>
+    <p style="font-size:17px; line-height:1.8; color:#333;">
+      Hello! I’m <strong>Pranabesh Basu</strong>, a passionate and dedicated Computer Science Engineering 
+      student specializing in Artificial Intelligence and Machine Learning 
+      at the University of Engineering & Management (UEM), Kolkata. 
+      I have a solid academic background with a CGPA of 9.1 (up to 2nd year) 
+      and a keen interest in blending software development with real-world innovation.
+      My curiosity and commitment to continuous learning make me stand out in any team.
+    </p>
+  </section>
+
+  <!-- Skills and Interests Section -->
+  <section id="skills" style="padding:30px; background-color:#dff6ff; margin:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+    <h2 style="color:#2980b9;">Skills</h2>
+    <ul style="font-size:17px; color:#2c3e50;">
+      <li>Programming Languages: Python, C, C++, Java</li>
+      <li>Git and GitHub</li>
+      <li>Data Structures and Algorithms</li>
+      <li>Basics of Machine Learning</li>
+    </ul>
+
+    <h2 style="color:#2980b9;">Interests</h2>
+    <ol style="font-size:17px; color:#2c3e50;">
+      <li>Web Development</li>
+      <li>Open Source Projects</li>
+      <li>Artificial Intelligence</li>
+      <li>Internet of Things</li>
+    </ol>
+  </section>
+
+<!-- Projects Section -->
+<section id="projects" style="padding:30px; background-color:white; margin:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1);" x-data="{ modalOpen: false }">
+  <h2 style="color:#2980b9;" class="text-2xl font-semibold mb-4">Projects</h2>
+
+  <h3 class="text-lg font-bold text-gray-800">1. Railway Track Crack Detection</h3>
+  <p style="font-size:16px; color:#444;">
+    This project uses GPS, eddy current, ultrasonic, and piezoelectric sensors with a Raspberry Pi.
+    Mounted on a surveillance cart, it detects surface and internal cracks in real-time through waveform analysis and image processing — significantly reducing train accident risks.
+  </p>
+
+  <h3 class="text-lg font-bold text-gray-800 mt-4">2. ECG-Based Heart Stroke Prediction System</h3>
+  <p style="font-size:16px; color:#444;">
+    Developed a smart system that predicts heart stroke risk using AI and IoT. It captures ECG, SpO2, and heart rate data using sensors and analyzes them with a Random Forest model on Raspberry Pi.
+  </p>
+
+  <h3 class="text-lg font-bold text-gray-800 mt-4">3. BharatVotes</h3>
+  <p style="font-size:16px; color:#444;">
+    A web platform enabling migrants to securely cast their votes remotely when away from their home districts.
+  </p>
+
+  <!-- Modal Trigger Button -->
+  <div class="text-center mt-6">
+    <button 
+      @click="modalOpen = true" 
+      class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+    >
+      View Project Details
+    </button>
+  </div>
+
+  <!-- Modal Component -->
+  <div 
+    x-show="modalOpen" 
+    x-transition 
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
+    x-cloak
+    @keydown.escape.window="modalOpen = false"
+  >
+    <div class="bg-white rounded-xl shadow-xl p-6 w-11/12 max-w-lg relative" @click.away="modalOpen = false">
+      <button class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-xl font-bold" @click="modalOpen = false">&times;</button>
+      <h3 class="text-2xl font-semibold text-blue-700 mb-4">Railway Track Crack Detection</h3>
+      <p class="text-gray-700 text-sm leading-relaxed">
+        This project uses GPS, eddy current, ultrasonic, and piezoelectric sensors with a Raspberry Pi.
+        Mounted on a surveillance cart, it detects both surface and internal cracks in real-time using waveform analysis and image processing — significantly reducing railway accident risks.
+      </p>
+      <div class="mt-4 text-right">
+        <button @click="modalOpen = false" class="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded-md">Close</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Information -->
+  <section id="contact" style="padding:30px; background-color:#fff7e6; margin:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+    <h2 style="color:#2980b9;">Contact Me</h2>
+    <p style="font-size:16px;">Email: 
+      <a href="mailto:pranabeshbasu9502@gmail.com" style="color:#2980b9;">pranabeshbasu9502@gmail.com</a>
+    </p>
+    <p style="font-size:16px;">
+      LinkedIn: 
+      <a href="https://www.linkedin.com/in/pranabeshbasub44b03283" target="_blank" style="color:#2980b9;">linkedin.com/in/pranabesh-basu</a><br>
+      GitHub: 
+      <a href="https://github.com/PranabeshBasu" target="_blank" style="color:#2980b9;">github.com/PranabeshBasu</a>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background-color:#2c3e50; color:white; text-align:center; padding:15px 0; margin-top:30px;">
+    <p style="margin:0;">&copy; 2025 Pranabesh Basu. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
